@@ -1,0 +1,20 @@
+.main-banner h1 {
+  font-size: 50px;
+  font-weight: 700;
+}
+.main-banner p {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 25px auto;
+  width: 45%;
+}
+.carousel-caption {
+  bottom: 180px;
+}
+.main-banner .contact-btn {
+  background: #fff;
+  color: #00bb6d;
+}
+.carousel-indicators button {
+  display: none;
+}
