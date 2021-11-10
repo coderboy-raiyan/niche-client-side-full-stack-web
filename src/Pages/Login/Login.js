@@ -25,9 +25,13 @@ const override = css`
 const Login = () => {
   const { register, handleSubmit, reset } = useForm();
   let [color, setColor] = useState("#00BB6D");
-  const { signIn, error, setError, isAuthLoading } = useAuth();
+  const { signIn, error, setError, isAuthLoading, googleSignIn } = useAuth();
   const history = useHistory();
   const location = useLocation();
+
+  const handelGoogle = () => {
+    googleSignIn(history, location);
+  };
 
   const onSubmit = (data) => {
     console.log(data);
@@ -102,6 +106,7 @@ const Login = () => {
                       whileHover={{ scale: 1.2 }}
                       whileTap={{ scale: 1 }}
                       className="login-btn"
+                      onClick={handelGoogle}
                     >
                       <div className="google-icon">
                         <FcGoogle size={37} />
