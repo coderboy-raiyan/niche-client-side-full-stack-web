@@ -11,12 +11,14 @@ import {
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
+import useAuth from "./../Hooks/useAuth";
 import useReadMore from "./../Hooks/useReadMore";
 import "./Purchase.css";
 
 const Purchase = () => {
   const { productId } = useParams();
   const [car, setCar] = useState({});
+  const { user } = useAuth();
   const { register, handleSubmit, reset } = useForm();
   const { readMore, handelRead } = useReadMore();
 
@@ -24,6 +26,7 @@ const Purchase = () => {
     const newData = { ...data };
     newData.car_name = car.name;
     newData.price = car.price;
+    newData.email = user.email;
 
     fetch("http://localhost:5000/cars/order", {
       method: "POST",
@@ -97,6 +100,7 @@ const Purchase = () => {
                         type="email"
                         required
                         placeholder="Email"
+                        defaultValue={user.email}
                         className="shadow"
                       />
                     </InputGroup>
