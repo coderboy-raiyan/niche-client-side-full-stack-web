@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <Navbar bg="light" expand="lg" className="shadow-sm">
+    <Navbar bg="light" expand="lg" className="shadow-sm border-bottom">
       <Container>
         <Link to="/" className="navbar-brand">
           <img
@@ -14,8 +14,11 @@ const Header = () => {
           />
         </Link>
         <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav className="ms-auto my-2  my-lg-0" style={{ maxHeight: "100%" }}>
+        <Navbar.Collapse id="navbarScroll" className="text-center">
+          <Nav
+            className="ms-auto my-2  my-lg-0"
+            style={{ maxHeight: "100%", fontWeight: "600" }}
+          >
             <li className="nav-item me-3">
               <Link className="nav-link" to="/">
                 Home
@@ -24,6 +27,16 @@ const Header = () => {
             <li className="nav-item me-3">
               <Link className="nav-link" to="/products">
                 Explore
+              </Link>
+            </li>
+            <li className="nav-item me-3">
+              <Link className="nav-link" to="/login">
+                Login
+              </Link>
+            </li>
+            <li className="nav-item me-3">
+              <Link className="nav-link" to="/register">
+                Register
               </Link>
             </li>
           </Nav>
