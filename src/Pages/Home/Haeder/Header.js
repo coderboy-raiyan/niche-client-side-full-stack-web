@@ -8,7 +8,7 @@ const Header = () => {
   const { user, logOut } = useAuth();
   return (
     <Navbar bg="light" expand="lg" className="shadow-sm border-bottom">
-      <Container>
+      <Container fluid>
         <Link to="/" className="navbar-brand">
           <img
             src="https://i.ibb.co/S7wpkHw/cars-logo.png"
@@ -33,23 +33,30 @@ const Header = () => {
               </Link>
             </li>
             {user.email ? (
-              <li className="nav-item d-flex justify-content-center align-items-center  me-3">
-                <div>
-                  <img
-                    src={user?.photoURL}
-                    alt=""
-                    width="50px"
-                    height="50px"
-                    className="rounded-circle "
-                  />
-                </div>
-                <h6 className="ms-3 mb-0">{user?.displayName}</h6>
-                <div className="  me-3">
-                  <button className="nav-link btn btn-light" onClick={logOut}>
-                    <FiLogOut size={20} />
-                  </button>
-                </div>
-              </li>
+              <>
+                <li className="nav-item me-3 py-2">
+                  <Link className="nav-link" to="/dashboard">
+                    DashBoard
+                  </Link>
+                </li>
+                <li className="nav-item d-flex justify-content-center align-items-center  me-3">
+                  <div>
+                    <img
+                      src={user?.photoURL}
+                      alt=""
+                      width="50px"
+                      height="50px"
+                      className="rounded-circle "
+                    />
+                  </div>
+                  <h6 className="ms-3 mb-0">{user?.displayName}</h6>
+                  <div className="  me-3">
+                    <button className="nav-link btn btn-light" onClick={logOut}>
+                      <FiLogOut size={20} />
+                    </button>
+                  </div>
+                </li>
+              </>
             ) : (
               <>
                 <li className="nav-item me-3 py-2">

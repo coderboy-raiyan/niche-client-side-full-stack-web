@@ -14,6 +14,7 @@ import { FcGoogle } from "react-icons/fc";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import MoonLoader from "react-spinners/MoonLoader";
 import Swal from "sweetalert2";
+import Header from "./../Home/Haeder/Header";
 import useAuth from "./../Hooks/useAuth";
 
 const override = css`
@@ -63,6 +64,7 @@ const Register = () => {
   };
   return (
     <>
+      <Header />
       <section className=" main-forms">
         {isAuthLoading && <MoonLoader color={color} css={override} size={80} />}
         <Container>

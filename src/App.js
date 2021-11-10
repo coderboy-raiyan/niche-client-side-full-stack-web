@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import AuthProvider from "./Pages/Context/AuthProvider";
 import ProductProvider from "./Pages/Context/ProductProvider";
-import Header from "./Pages/Home/Haeder/Header";
+import DashBoard from "./Pages/DashBoard/DashBoard/DashBoard";
 import Home from "./Pages/Home/Home/Home";
 import Login from "./Pages/Login/Login";
 import NotFound from "./Pages/NotFound/NotFound";
@@ -18,7 +18,6 @@ const App = () => {
     <AuthProvider>
       <ProductProvider>
         <BrowserRouter>
-          <Header />
           <Switch>
             <Route exact path="/">
               <Home></Home>
@@ -34,6 +33,9 @@ const App = () => {
             </Route>
             <Route path="/register">
               <Register></Register>
+            </Route>
+            <Route path="/dashboard">
+              <DashBoard></DashBoard>
             </Route>
             <PrivateRoute path="/product/:productId">
               <Purchase></Purchase>
