@@ -8,6 +8,7 @@ import Header from "./Pages/Home/Haeder/Header";
 import Home from "./Pages/Home/Home/Home";
 import Login from "./Pages/Login/Login";
 import NotFound from "./Pages/NotFound/NotFound";
+import PrivateRoute from "./Pages/PrivateRoute/PrivateRoute";
 import Products from "./Pages/Products/Products";
 import Purchase from "./Pages/Purchase/Purchase";
 import Register from "./Pages/Register/Register";
@@ -34,9 +35,9 @@ const App = () => {
             <Route path="/register">
               <Register></Register>
             </Route>
-            <Route path="/product/:productId">
+            <PrivateRoute path="/product/:productId">
               <Purchase></Purchase>
-            </Route>
+            </PrivateRoute>
             <Route exact path="*">
               <NotFound></NotFound>
             </Route>
