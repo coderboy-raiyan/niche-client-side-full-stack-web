@@ -12,7 +12,7 @@ import {
 import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useHistory, useLocation } from "react-router-dom";
-import BounceLoader from "react-spinners/BounceLoader";
+import MoonLoader from "react-spinners/MoonLoader";
 import Swal from "sweetalert2";
 import useAuth from "./../Hooks/useAuth";
 
@@ -26,7 +26,7 @@ const Register = () => {
   const { googleSignIn, signUp, isAuthLoading, error, setError } = useAuth();
   const history = useHistory();
   const location = useLocation();
-  let [color, setColor] = useState("#86e7d4");
+  let [color, setColor] = useState("#00BB6D");
 
   const handelGoogle = () => {
     googleSignIn(history, location);
@@ -58,14 +58,13 @@ const Register = () => {
     }
 
     signUp(data.email, data.password, data.name, data.img, history, location);
+    setError("");
     reset();
   };
   return (
     <>
       <section className=" main-forms">
-        {isAuthLoading && (
-          <BounceLoader color={color} css={override} size={80} />
-        )}
+        {isAuthLoading && <MoonLoader color={color} css={override} size={80} />}
         <Container>
           <Row className="d-flex justify-content-center vh-100 align-items-center">
             <Col xs={12} lg={6} md={6}>

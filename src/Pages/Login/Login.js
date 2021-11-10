@@ -1,19 +1,54 @@
+import { css } from "@emotion/react";
 import { motion } from "framer-motion";
-import React from "react";
-import { Col, Container, FormControl, InputGroup, Row } from "react-bootstrap";
+import React, { useState } from "react";
+import {
+  Alert,
+  Col,
+  Container,
+  FormControl,
+  InputGroup,
+  Row,
+} from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
+import MoonLoader from "react-spinners/MoonLoader";
+import Swal from "sweetalert2";
+import useAuth from "./../Hooks/useAuth";
 import "./Login.css";
+
+const override = css`
+  display: block;
+  margin: 20px auto;
+`;
 
 const Login = () => {
   const { register, handleSubmit, reset } = useForm();
+  let [color, setColor] = useState("#00BB6D");
+  const { signIn, error, setError, isAuthLoading } = useAuth();
+  const history = useHistory();
+  const location = useLocation();
+
   const onSubmit = (data) => {
     console.log(data);
+    if (data.password.length < 6) {
+      setError("Password must be at least 6 characters!");
+      return Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Password must be at least 6 characters!",
+        footer:
+          '<a target="_blank" href="https://its.weill.cornell.edu/policies/1115-password-policy-and-guidelines">Why do I have this issue?</a>',
+      });
+    }
+
+    signIn(data.email, data.password, history, location);
+    setError("");
     reset();
   };
   return (
-    <section className="bg-light">
+    <section className="bg-light py-5">
+      {isAuthLoading && <MoonLoader color={color} css={override} size={60} />}
       <Container>
         <Row className="d-flex justify-content-center vh-100 align-items-center">
           <Col xs={12} lg={6} md={6}>
@@ -22,6 +57,11 @@ const Login = () => {
                 <Row>
                   <Col xs={12} lg={12} md={12}>
                     <h5 className="text-center">Please Login</h5>
+                  </Col>
+                  <Col xs={12} lg={12} md={12}>
+                    <div className="px-5">
+                      {error && <Alert variant="danger">{error}</Alert>}
+                    </div>
                   </Col>
                   <Col xs={12} lg={12} md={12}>
                     <InputGroup className="mb-3 mt-4 login-input">

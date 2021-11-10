@@ -34,6 +34,11 @@ const useFirebase = () => {
       .catch((error) => {
         const errorMessage = error.message;
         setError(errorMessage);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: errorMessage,
+        });
       })
       .finally(() => {
         setAuthLoading(false);
@@ -64,6 +69,11 @@ const useFirebase = () => {
       .catch((error) => {
         const errorMessage = error.message;
         setError(errorMessage);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: errorMessage,
+        });
       })
       .finally(() => {
         setAuthLoading(false);
@@ -75,11 +85,19 @@ const useFirebase = () => {
     setAuthLoading(true);
     signInWithEmailAndPassword(auth, email, password)
       .then((result) => {
+        const redirect_uri = location.state?.from || "/home";
+        history.push(redirect_uri);
+        Swal.fire("Good job!", "Logged in successful", "success");
         setError("");
       })
       .catch((error) => {
         const errorMessage = error.message;
         setError(errorMessage);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: errorMessage,
+        });
       })
       .finally(() => {
         setAuthLoading(false);
