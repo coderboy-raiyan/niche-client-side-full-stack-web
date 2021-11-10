@@ -1,15 +1,23 @@
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React from "react";
 import { Card, Col } from "react-bootstrap";
 import Rating from "react-rating";
+import { useHistory } from "react-router-dom";
+import useReadMore from "./../../Hooks/useReadMore";
 import "./SingalProduct.css";
 
 const SingalProduct = ({ product }) => {
   const { name, price, ratings, img, des, _id } = product;
-  const [readMore, setReadMore] = useState(false);
+  // const [readMore, setReadMore] = useState(false);
+  const { handelRead, readMore } = useReadMore();
+  const history = useHistory();
 
-  const handelRead = () => {
-    setReadMore(!readMore);
+  // const handelRead = () => {
+  //   setReadMore(!readMore);
+  // };
+
+  const handelPurcahse = (id) => {
+    history.push(`/product/${id}`);
   };
 
   return (
@@ -49,6 +57,7 @@ const SingalProduct = ({ product }) => {
             color: "#00BB6D",
           }}
           whileTap={{ scale: 1 }}
+          onClick={() => handelPurcahse(_id)}
         >
           Buy Now
         </motion.button>

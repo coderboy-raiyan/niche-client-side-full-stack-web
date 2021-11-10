@@ -15,7 +15,9 @@ const useProducts = () => {
     fetch("http://localhost:5000/cars")
       .then((res) => res.json())
       .then((data) => setProducts(data))
-      .finally(() => {});
+      .finally(() => {
+        // setProductLoading(false);
+      });
   }, []);
 
   return {

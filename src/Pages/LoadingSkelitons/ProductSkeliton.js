@@ -12,28 +12,24 @@ const ProductSkeliton = () => {
         </div>
         <Card.Body>
           <Card.Title className="product-title">
-            <Skeleton height={20} />
+            <Skeleton height={30} />
           </Card.Title>
           <Card.Text className="text-muted my-4">
-            <Skeleton />
+            <Skeleton height={30} />
             <br />
             <span className="readmore">
-              <Skeleton />
+              <Skeleton height={30} />
             </span>{" "}
           </Card.Text>
           <h5 className="product-price">
-            <Skeleton height={20} />
+            <Skeleton height={30} />
           </h5>
           <div className="ratings mt-3">
             <p>
-              <Skeleton />
+              <Skeleton height={30} />
             </p>
           </div>
         </Card.Body>
-
-        <button className="btn btn-light w-75 m-auto px-4 py-3">
-          <Skeleton height={50} />
-        </button>
       </Card>
     </Col>
   );

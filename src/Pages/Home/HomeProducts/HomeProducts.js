@@ -50,7 +50,10 @@ const HomeProducts = () => {
             <Col md={12} sm={12} lg={12}>
               <div className="explore-btn my-4">
                 <Link className="text-decoration-none" to="/products">
-                  <ExploreBtn className="d-block m-auto ">
+                  <ExploreBtn
+                    className="d-block m-auto "
+                    onClick={() => window.scrollTo(0, 0)}
+                  >
                     More cars <BsArrowRight className="ms-3" />{" "}
                   </ExploreBtn>
                 </Link>
