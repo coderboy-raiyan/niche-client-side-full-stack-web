@@ -19,3 +19,66 @@
   width: 100%;
   margin: 20px auto;
 }
+
+.testimonial-inner p {
+  font-size: 21px;
+  line-height: 36px;
+  margin-bottom: 30px;
+  margin-top: 50px;
+  width: 60%;
+  margin: auto;
+}
+.testimonial-inner h5 {
+  font-size: 18px;
+  line-height: 36px;
+  margin-top: 15px;
+  margin-bottom: 80px;
+}
+.testimonial-inner img {
+  width: 70px !important;
+  margin-top: 20px;
+  border-radius: 50%;
+  margin-bottom: 40px;
+}
+
+/* Swiper styles here */
+.reviews-section .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.reviews-section .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: transparent;
+  color: #fff;
+  min-height: 400px;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-pagination-bullet {
+  background-color: #fff;
+  width: 12px;
+  height: 12px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  display: none;
+}

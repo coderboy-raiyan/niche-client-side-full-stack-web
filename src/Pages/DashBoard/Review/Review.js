@@ -4,9 +4,12 @@ import { Col, Container, FormControl, InputGroup, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import useAuth from "./../../Hooks/useAuth";
+import useReviewsContext from "./../../Hooks/useReviewsContext";
 const Review = () => {
   const { register, handleSubmit, reset } = useForm();
   const { user } = useAuth();
+  const { setIsReviewChanged } = useReviewsContext();
+
   const onSubmit = (data) => {
     console.log(data);
     const newData = { ...data };
@@ -28,7 +31,11 @@ const Review = () => {
             showConfirmButton: false,
             timer: 1500,
           });
+          setIsReviewChanged(true);
         }
+      })
+      .finally(() => {
+        setIsReviewChanged(false);
       });
 
     reset();
