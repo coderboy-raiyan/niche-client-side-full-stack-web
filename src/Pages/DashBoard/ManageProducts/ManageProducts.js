@@ -57,7 +57,7 @@ const ManageProducts = () => {
             <h1 className="text-center my-5">All Products</h1>
           </Col>
           <Col xs={12} lg={12} md={12}>
-            <Table striped bordered hover>
+            <Table striped bordered hover responsive>
               <thead>
                 <tr>
                   <th>Car Name</th>
