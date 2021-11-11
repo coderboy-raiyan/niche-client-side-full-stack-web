@@ -17,6 +17,7 @@ import MyOrders from "../MyOrders/MyOrders";
 import Pay from "../Pay/Pay";
 import AddProduct from "./../AddProduct/AddProduct";
 import MakeAdmin from "./../MakeAdmin/MakeAdmin";
+import ManageOrders from "./../ManageOrders/ManageOrders";
 import ManageProducts from "./../ManageProducts/ManageProducts";
 import PrivateDashBoard from "./../PrivateDashBoard/PrivateDashBoard";
 import Review from "./../Review/Review";
@@ -139,6 +140,17 @@ const DashBoard = () => {
                         Manage all Products
                       </Link>
                     </ListGroup.Item>
+                    <ListGroup.Item
+                      className="border-bottom border-0 text-center"
+                      onClick={handleClose}
+                    >
+                      <Link
+                        className="text-decoration-none text-secondary"
+                        to={`${url}/manageorders`}
+                      >
+                        Manage Orders
+                      </Link>
+                    </ListGroup.Item>
                   </>
                 )}
                 <ListGroup.Item className="border-bottom  border-0 text-center">
@@ -179,6 +191,9 @@ const DashBoard = () => {
                 </PrivateDashBoard>
                 <PrivateDashBoard path={`${path}/manageproducts`}>
                   <ManageProducts />
+                </PrivateDashBoard>
+                <PrivateDashBoard path={`${path}/manageorders`}>
+                  <ManageOrders />
                 </PrivateDashBoard>
               </Switch>
             </Col>

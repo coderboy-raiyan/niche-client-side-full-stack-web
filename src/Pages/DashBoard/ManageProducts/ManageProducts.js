@@ -69,7 +69,7 @@ const ManageProducts = () => {
               <tbody>
                 {products.map((product) => {
                   return isProductLoading ? (
-                    <ManageOrderSke />
+                    <ManageOrderSke key={product._id} />
                   ) : (
                     <tr key={product._id}>
                       <td>{product.name}</td>
