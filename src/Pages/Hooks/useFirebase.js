@@ -28,7 +28,14 @@ const useFirebase = () => {
       .then((result) => {
         const redirect_uri = location.state?.from || "/home";
         history.push(redirect_uri);
+        const temporaryUser = {
+          email: result.user.email,
+          name: result.user.displayName,
+          photoURL: result.user.photoURL,
+        };
+        sendUser(temporaryUser, "PUT");
         setError("");
+        console.log(result.user);
         Swal.fire("Good job!", "Logged in enjoy", "success");
       })
       .catch((error) => {
@@ -56,6 +63,7 @@ const useFirebase = () => {
           photoURL: img,
         };
         setUser(temporaryUser);
+        sendUser(temporaryUser, "POST");
         updateProfile(auth.currentUser, {
           displayName: name,
           photoURL: img,
@@ -135,6 +143,17 @@ const useFirebase = () => {
       .finally(() => {
         setAuthLoading(false);
       });
+  };
+
+  // send user information in mongodb
+  const sendUser = (userData, method) => {
+    fetch("http://localhost:5000/user", {
+      method: method,
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(userData),
+    })
+      .then((res) => res.json())
+      .then((data) => {});
   };
 
   return {
