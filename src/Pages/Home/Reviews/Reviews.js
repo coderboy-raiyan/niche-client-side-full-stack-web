@@ -1,9 +1,13 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { FaQuoteRight } from "react-icons/fa";
+import useReviewsContext from "./../../Hooks/useReviewsContext";
 import "./Reviews.css";
 
 const Reviews = () => {
+  const { reviews } = useReviewsContext();
+  console.log(reviews);
+
   return (
     <section className="reviews-section">
       <Container>
