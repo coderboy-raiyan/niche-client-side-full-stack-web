@@ -1,10 +1,24 @@
 import React from "react";
+import { Col, Container, Row } from "react-bootstrap";
+import { FaQuoteRight } from "react-icons/fa";
+import "./Reviews.css";
 
 const Reviews = () => {
   return (
-    <div>
-      <h1>This is reviews</h1>
-    </div>
+    <section className="reviews-section">
+      <Container>
+        <Row>
+          <Col xs={12} lg={12} md={12}>
+            <div className="testimonial-haeder">
+              <h1>Testimonials</h1>
+              <div className="quotes">
+                <FaQuoteRight className="quato-icon" />
+              </div>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    </section>
   );
 };
 

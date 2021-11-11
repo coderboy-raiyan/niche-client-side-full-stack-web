@@ -23,6 +23,7 @@
     "react-topbar-progress-indicator": "^4.1.0",
     "styled-components": "^5.3.3",
     "sweetalert2": "^11.1.10",
+    "swiper": "6.8.4",
     "web-vitals": "^1.0.1"
   },
   "scripts": {

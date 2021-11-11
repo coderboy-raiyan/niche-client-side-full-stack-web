@@ -11,6 +11,7 @@ const Review = () => {
     console.log(data);
     const newData = { ...data };
     newData.email = user.email;
+    newData.img = user.photoURL;
 
     fetch("http://localhost:5000/user/reviews", {
       method: "POST",
@@ -64,6 +65,18 @@ const Review = () => {
                       defaultValue={user?.email}
                       {...register("email")}
                       type="email"
+                      className="p-3 shadow border-2"
+                    />
+                  </InputGroup>
+                </Col>
+                <Col xs={12} lg={12} md={12}>
+                  <InputGroup className="mb-3 ">
+                    <FormControl
+                      placeholder="Profile Picture"
+                      required
+                      defaultValue={user?.photoURL}
+                      {...register("img")}
+                      type="url"
                       className="p-3 shadow border-2"
                     />
                   </InputGroup>
