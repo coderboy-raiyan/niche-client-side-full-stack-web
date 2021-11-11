@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 const useProducts = () => {
   const [products, setProducts] = useState([]);
   const [isProductLoading, setProductLoading] = useState(true);
+  const [isProductChange, setIsProductCahnge] = useState(false);
 
   useEffect(() => {
     setProductLoading(true);
@@ -14,15 +15,13 @@ const useProducts = () => {
   useEffect(() => {
     fetch("http://localhost:5000/cars")
       .then((res) => res.json())
-      .then((data) => setProducts(data))
-      .finally(() => {
-        // setProductLoading(false);
-      });
-  }, []);
+      .then((data) => setProducts(data));
+  }, [isProductChange]);
 
   return {
     products,
     isProductLoading,
+    setIsProductCahnge,
   };
 };
 

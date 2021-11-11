@@ -42,7 +42,7 @@ const SingalProduct = ({ product }) => {
                 emptySymbol={<i className="bi bi-star-half"></i>}
                 fullSymbol={<i className="bi bi-star-fill"></i>}
                 readonly
-                initialRating={ratings}
+                initialRating={Number(ratings)}
               />
             </p>
           </div>

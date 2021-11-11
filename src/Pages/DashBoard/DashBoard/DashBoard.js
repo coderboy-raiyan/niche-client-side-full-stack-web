@@ -8,12 +8,14 @@ import {
   Offcanvas,
   Row,
 } from "react-bootstrap";
-import { RiMenu3Line } from "react-icons/ri";
+import { MdRateReview } from "react-icons/md";
+import { RiMenu3Line, RiShoppingCartLine } from "react-icons/ri";
 import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth";
 import MyOrders from "../MyOrders/MyOrders";
 import Pay from "../Pay/Pay";
+import AddProduct from "./../AddProduct/AddProduct";
 import MakeAdmin from "./../MakeAdmin/MakeAdmin";
 import PrivateDashBoard from "./../PrivateDashBoard/PrivateDashBoard";
 import Review from "./../Review/Review";
@@ -21,7 +23,7 @@ import Review from "./../Review/Review";
 const DashBoard = () => {
   const [show, setShow] = useState(false);
   let { path, url } = useRouteMatch();
-  const { logOut } = useAuth();
+  const { logOut, admin } = useAuth();
 
   const handelLogout = () => {
     Swal.fire({
@@ -76,7 +78,7 @@ const DashBoard = () => {
                     className="text-decoration-none text-secondary"
                     to={`${url}/myorders`}
                   >
-                    My Orders
+                    <RiShoppingCartLine size={20} className="me-2" /> My Orders
                   </Link>
                 </ListGroup.Item>
                 <ListGroup.Item
@@ -87,7 +89,7 @@ const DashBoard = () => {
                     className="text-decoration-none text-secondary"
                     to={`${url}/review`}
                   >
-                    Reviews
+                    <MdRateReview size={20} className="me-2" /> Reviews
                   </Link>
                 </ListGroup.Item>
                 <ListGroup.Item
@@ -101,17 +103,32 @@ const DashBoard = () => {
                     Pay
                   </Link>
                 </ListGroup.Item>
-                <ListGroup.Item
-                  className="border-bottom border-0 text-center"
-                  onClick={handleClose}
-                >
-                  <Link
-                    className="text-decoration-none text-secondary"
-                    to={`${url}/makeadmin`}
-                  >
-                    Make admin
-                  </Link>
-                </ListGroup.Item>
+                {admin.admin && (
+                  <>
+                    <ListGroup.Item
+                      className="border-bottom border-0 text-center"
+                      onClick={handleClose}
+                    >
+                      <Link
+                        className="text-decoration-none text-secondary"
+                        to={`${url}/makeadmin`}
+                      >
+                        Make admin
+                      </Link>
+                    </ListGroup.Item>
+                    <ListGroup.Item
+                      className="border-bottom border-0 text-center"
+                      onClick={handleClose}
+                    >
+                      <Link
+                        className="text-decoration-none text-secondary"
+                        to={`${url}/addproduct`}
+                      >
+                        Add a product
+                      </Link>
+                    </ListGroup.Item>
+                  </>
+                )}
                 <ListGroup.Item className="border-bottom  border-0 text-center">
                   <button className="btn btn-warning" onClick={handelLogout}>
                     Logout
@@ -144,6 +161,9 @@ const DashBoard = () => {
                 </Route>
                 <PrivateDashBoard path={`${path}/makeadmin`}>
                   <MakeAdmin />
+                </PrivateDashBoard>
+                <PrivateDashBoard path={`${path}/addproduct`}>
+                  <AddProduct />
                 </PrivateDashBoard>
               </Switch>
             </Col>

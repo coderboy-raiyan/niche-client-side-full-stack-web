@@ -94,6 +94,7 @@ const Purchase = () => {
                         <FormControl
                           {...register("name")}
                           type="text"
+                          defaultValue={user?.displayName}
                           required
                           placeholder="Name"
                           className="shadow"
