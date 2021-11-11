@@ -13,7 +13,9 @@ import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth";
 import MyOrders from "../MyOrders/MyOrders";
+import Pay from "../Pay/Pay";
 import MakeAdmin from "./../MakeAdmin/MakeAdmin";
+import PrivateDashBoard from "./../PrivateDashBoard/PrivateDashBoard";
 import Review from "./../Review/Review";
 
 const DashBoard = () => {
@@ -94,6 +96,17 @@ const DashBoard = () => {
                 >
                   <Link
                     className="text-decoration-none text-secondary"
+                    to={`${url}/pay`}
+                  >
+                    Pay
+                  </Link>
+                </ListGroup.Item>
+                <ListGroup.Item
+                  className="border-bottom border-0 text-center"
+                  onClick={handleClose}
+                >
+                  <Link
+                    className="text-decoration-none text-secondary"
                     to={`${url}/makeadmin`}
                   >
                     Make admin
@@ -126,9 +139,12 @@ const DashBoard = () => {
                 <Route path={`${path}/review`}>
                   <Review />
                 </Route>
-                <Route path={`${path}/makeadmin`}>
-                  <MakeAdmin />
+                <Route path={`${path}/pay`}>
+                  <Pay />
                 </Route>
+                <PrivateDashBoard path={`${path}/makeadmin`}>
+                  <MakeAdmin />
+                </PrivateDashBoard>
               </Switch>
             </Col>
           </Row>
