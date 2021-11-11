@@ -4,6 +4,7 @@ import { Col, Container, Row, Table } from "react-bootstrap";
 import { AiOutlineDelete } from "react-icons/ai";
 import Rating from "react-rating";
 import Swal from "sweetalert2";
+import ManageOrderSke from "../../LoadingSkelitons/ManageOrderSke";
 import useProductContext from "./../../Hooks/useProductContext";
 
 const ManageProducts = () => {
@@ -67,7 +68,9 @@ const ManageProducts = () => {
               </thead>
               <tbody>
                 {products.map((product) => {
-                  return (
+                  return isProductLoading ? (
+                    <ManageOrderSke />
+                  ) : (
                     <tr key={product._id}>
                       <td>{product.name}</td>
                       <td>$ {product.price}</td>
