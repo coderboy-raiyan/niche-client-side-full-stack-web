@@ -12,6 +12,7 @@ import { RiMenu3Line } from "react-icons/ri";
 import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
 import MyOrders from "../MyOrders/MyOrders";
 import Reviews from "./../../Home/Reviews/Reviews";
+import MakeAdmin from "./../MakeAdmin/MakeAdmin";
 
 const DashBoard = () => {
   const [show, setShow] = useState(false);
@@ -55,6 +56,12 @@ const DashBoard = () => {
                 >
                   <Link to={`${url}/reviews`}>Reviews</Link>
                 </ListGroup.Item>
+                <ListGroup.Item
+                  className="border-bottom border-0 text-center"
+                  onClick={handleClose}
+                >
+                  <Link to={`${url}/makeadmin`}>Make admin</Link>
+                </ListGroup.Item>
               </ListGroup>
             </Offcanvas.Body>
           </Offcanvas>
@@ -76,6 +83,9 @@ const DashBoard = () => {
                 </Route>
                 <Route path={`${path}/reviews`}>
                   <Reviews />
+                </Route>
+                <Route path={`${path}/makeadmin`}>
+                  <MakeAdmin />
                 </Route>
               </Switch>
             </Col>
