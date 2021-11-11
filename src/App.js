@@ -34,9 +34,9 @@ const App = () => {
             <Route path="/register">
               <Register></Register>
             </Route>
-            <Route path="/dashboard">
+            <PrivateRoute path="/dashboard">
               <DashBoard></DashBoard>
-            </Route>
+            </PrivateRoute>
             <PrivateRoute path="/product/:productId">
               <Purchase></Purchase>
             </PrivateRoute>

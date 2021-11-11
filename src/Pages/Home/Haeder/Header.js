@@ -2,10 +2,31 @@ import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { FiLogOut } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 import useAuth from "./../../Hooks/useAuth";
 
 const Header = () => {
   const { user, logOut } = useAuth();
+
+  const handelLogout = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You want to log out!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        logOut();
+        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+      } else {
+        Swal.fire("OK", "No problem.", "info");
+      }
+    });
+  };
+
   return (
     <Navbar bg="light" expand="lg" className="shadow-sm border-bottom">
       <Container fluid>
@@ -51,7 +72,10 @@ const Header = () => {
                   </div>
                   <h6 className="ms-3 mb-0">{user?.displayName}</h6>
                   <div className="  me-3">
-                    <button className="nav-link btn btn-light" onClick={logOut}>
+                    <button
+                      className="nav-link btn btn-light"
+                      onClick={handelLogout}
+                    >
                       <FiLogOut size={20} />
                     </button>
                   </div>

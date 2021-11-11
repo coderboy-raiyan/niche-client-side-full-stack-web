@@ -10,13 +10,35 @@ import {
 } from "react-bootstrap";
 import { RiMenu3Line } from "react-icons/ri";
 import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
+import Swal from "sweetalert2";
+import useAuth from "../../Hooks/useAuth";
 import MyOrders from "../MyOrders/MyOrders";
-import Reviews from "./../../Home/Reviews/Reviews";
 import MakeAdmin from "./../MakeAdmin/MakeAdmin";
+import Review from "./../Review/Review";
 
 const DashBoard = () => {
   const [show, setShow] = useState(false);
   let { path, url } = useRouteMatch();
+  const { logOut } = useAuth();
+
+  const handelLogout = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You want to log out!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        logOut();
+        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+      } else {
+        Swal.fire("OK", "No problem.", "info");
+      }
+    });
+  };
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -48,19 +70,39 @@ const DashBoard = () => {
                   className="border-bottom border-0 text-center"
                   onClick={handleClose}
                 >
-                  <Link to={`${url}/myorders`}>My Orders</Link>
+                  <Link
+                    className="text-decoration-none text-secondary"
+                    to={`${url}/myorders`}
+                  >
+                    My Orders
+                  </Link>
                 </ListGroup.Item>
                 <ListGroup.Item
                   className="border-bottom border-0 text-center"
                   onClick={handleClose}
                 >
-                  <Link to={`${url}/reviews`}>Reviews</Link>
+                  <Link
+                    className="text-decoration-none text-secondary"
+                    to={`${url}/review`}
+                  >
+                    Reviews
+                  </Link>
                 </ListGroup.Item>
                 <ListGroup.Item
                   className="border-bottom border-0 text-center"
                   onClick={handleClose}
                 >
-                  <Link to={`${url}/makeadmin`}>Make admin</Link>
+                  <Link
+                    className="text-decoration-none text-secondary"
+                    to={`${url}/makeadmin`}
+                  >
+                    Make admin
+                  </Link>
+                </ListGroup.Item>
+                <ListGroup.Item className="border-bottom  border-0 text-center">
+                  <button className="btn btn-warning" onClick={handelLogout}>
+                    Logout
+                  </button>
                 </ListGroup.Item>
               </ListGroup>
             </Offcanvas.Body>
@@ -81,8 +123,8 @@ const DashBoard = () => {
                 <Route path={`${path}/myorders`}>
                   <MyOrders />
                 </Route>
-                <Route path={`${path}/reviews`}>
-                  <Reviews />
+                <Route path={`${path}/review`}>
+                  <Review />
                 </Route>
                 <Route path={`${path}/makeadmin`}>
                   <MakeAdmin />
