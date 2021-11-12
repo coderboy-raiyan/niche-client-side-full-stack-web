@@ -15,6 +15,7 @@ import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth";
 import MyOrders from "../MyOrders/MyOrders";
 import Pay from "../Pay/Pay";
+import NotFound from "./../../NotFound/NotFound";
 import AddProduct from "./../AddProduct/AddProduct";
 import MakeAdmin from "./../MakeAdmin/MakeAdmin";
 import ManageOrders from "./../ManageOrders/ManageOrders";
@@ -199,6 +200,9 @@ const DashBoard = () => {
                 <PrivateDashBoard path={`${path}/manageorders`}>
                   <ManageOrders />
                 </PrivateDashBoard>
+                <Route exact path={`${path}/*`}>
+                  <NotFound />
+                </Route>
               </Switch>
             </Col>
           </Row>
