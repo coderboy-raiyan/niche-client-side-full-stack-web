@@ -21,20 +21,23 @@
 
 @media only screen and (max-width: 768px) {
   .carousel-caption {
-    bottom: 1.25rem;
+    bottom: -0.75rem;
   }
   .main-banner h1 {
-    font-size: 30px;
+    font-size: 18px;
     font-weight: 700;
   }
   .main-banner p {
     font-size: 14px;
     font-weight: 500;
-    margin: 25px auto;
+    margin: 3px auto;
     width: 100%;
   }
   .main-banner button {
-    padding: 10px 20px;
+    padding: 7px 20px;
     font-size: 14px;
+  }
+  .main-banner img {
+    height: 162px;
   }
 }

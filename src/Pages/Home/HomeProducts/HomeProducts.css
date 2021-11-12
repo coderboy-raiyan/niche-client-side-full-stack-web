@@ -1,0 +1,10 @@
+@media only screen and (max-width: 768px) {
+  .services-title h1 {
+    width: 100%;
+    font-size: 30px;
+  }
+  .services-title p {
+    width: 100%;
+    font-size: 20px;
+  }
+}

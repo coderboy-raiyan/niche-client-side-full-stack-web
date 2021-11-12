@@ -7,6 +7,7 @@ import styled from "styled-components";
 import useProductContext from "../../Hooks/useProductContext";
 import ProductSkeliton from "../../LoadingSkelitons/ProductSkeliton";
 import SingalProduct from "../../Shared/SingalProduct/SingalProduct";
+import "./HomeProducts.css";
 // progress bar
 TopBarProgress.config({
   barColors: {

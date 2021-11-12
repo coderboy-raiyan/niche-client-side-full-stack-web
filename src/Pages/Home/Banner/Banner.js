@@ -19,13 +19,6 @@ const Banner = () => {
             <p>All services are industry level</p>
             <div className="btn-banner">
               <motion.button
-                whileHover={{ scale: 1.3 }}
-                whileTap={{ scale: 1.1 }}
-                className="contact-btn me-4"
-              >
-                Contact us
-              </motion.button>
-              <motion.button
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 1.3 }}
                 className="readmore-btn"
@@ -44,18 +37,8 @@ const Banner = () => {
 
           <Carousel.Caption>
             <h1>Car Inspection</h1>
-            <p>
-              Book an appointment for vehicle inspection at home or your nearest
-              CARS24 Branch.
-            </p>
+            <p>Book an appointment for vehicle.</p>
             <div className="btn-banner">
-              <motion.button
-                whileHover={{ scale: 1.3 }}
-                whileTap={{ scale: 1.1 }}
-                className="contact-btn me-4"
-              >
-                Contact us
-              </motion.button>
               <motion.button
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 1.3 }}
