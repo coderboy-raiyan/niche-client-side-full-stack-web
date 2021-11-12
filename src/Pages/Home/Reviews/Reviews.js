@@ -16,7 +16,7 @@ const Reviews = () => {
   console.log(reviews);
 
   return (
-    <section className="reviews-section">
+    <section className="reviews-section" id="reviews-section">
       <Container>
         <Row>
           <Col xs={12} lg={12} md={12}>

@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { FiLogOut } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import Swal from "sweetalert2";
 import useAuth from "./../../Hooks/useAuth";
 
@@ -48,20 +49,36 @@ const Header = () => {
             className="ms-auto my-2  my-lg-0"
             style={{ maxHeight: "100%", fontWeight: "600" }}
           >
-            <li className="nav-item me-3 py-2">
+            <li
+              className="nav-item me-3 py-2"
+              onClick={() => window.scrollTo(0, 0)}
+            >
               <Link className="nav-link" to="/">
                 Home
               </Link>
             </li>
             <li className="nav-item me-3 py-2">
-              <Link className="nav-link" to="/products">
+              <HashLink className="nav-link" to="/home#reviews-section">
+                Reviews
+              </HashLink>
+            </li>
+            <li className="nav-item me-3 py-2">
+              <Link
+                className="nav-link"
+                to="/products"
+                onClick={() => window.scrollTo(0, 0)}
+              >
                 Explore
               </Link>
             </li>
             {user.email ? (
               <>
                 <li className="nav-item me-3 py-2">
-                  <Link className="nav-link" to="/dashboard">
+                  <Link
+                    className="nav-link"
+                    to="/dashboard"
+                    onClick={() => window.scrollTo(0, 0)}
+                  >
                     DashBoard
                   </Link>
                 </li>
@@ -89,12 +106,20 @@ const Header = () => {
             ) : (
               <>
                 <li className="nav-item me-3 py-2">
-                  <Link className="nav-link" to="/login">
+                  <Link
+                    className="nav-link"
+                    to="/login"
+                    onClick={() => window.scrollTo(0, 0)}
+                  >
                     Login
                   </Link>
                 </li>
                 <li className="nav-item me-3 py-2">
-                  <Link className="nav-link" to="/register">
+                  <Link
+                    className="nav-link"
+                    to="/register"
+                    onClick={() => window.scrollTo(0, 0)}
+                  >
                     Register
                   </Link>
                 </li>

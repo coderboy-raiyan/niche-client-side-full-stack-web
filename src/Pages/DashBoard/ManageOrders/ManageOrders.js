@@ -90,7 +90,7 @@ const ManageOrders = () => {
   };
 
   return (
-    <section className="manage-products">
+    <section className="manage-products my-5">
       <Container>
         <Row>
           <Col md={12} lg={12} xs={12}>

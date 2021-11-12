@@ -17,6 +17,7 @@ const SingalProduct = ({ product }) => {
   // };
 
   const handelPurcahse = (id) => {
+    window.scrollTo(0, 0);
     history.push(`/product/${id}`);
   };
 

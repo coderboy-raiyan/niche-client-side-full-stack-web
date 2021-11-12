@@ -50,7 +50,7 @@ const ManageProducts = () => {
   };
 
   return (
-    <section className="manage-products">
+    <section className="manage-products mb-5">
       <Container>
         <Row>
           <Col md={12} lg={12} xs={12}>

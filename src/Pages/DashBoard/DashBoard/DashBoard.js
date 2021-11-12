@@ -57,7 +57,7 @@ const DashBoard = () => {
         className="border-bottom shadow-sm sticky-top"
       >
         <Container>
-          <Link className="navbar-brand" to="/dashboard">
+          <Link className="navbar-brand fw-bold" to="/dashboard">
             Dash Board
           </Link>
           <Nav className="ms-auto p-2">
