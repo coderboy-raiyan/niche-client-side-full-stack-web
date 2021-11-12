@@ -37,7 +37,7 @@ const useFirebase = () => {
         };
         sendUser(temporaryUser, "PUT");
         setError("");
-        console.log(result.user);
+
         Swal.fire("Good job!", "Logged in enjoy", "success");
       })
       .catch((error) => {
@@ -119,7 +119,6 @@ const useFirebase = () => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
-        console.log("looged in ", user);
       } else {
         setUser({});
       }

@@ -34,8 +34,6 @@ const Register = () => {
   };
 
   const onSubmit = (data) => {
-    console.log(data.conf_pass);
-
     if (data.password.length < 6) {
       setError("Password must be at least 6 characters!");
       return Swal.fire({

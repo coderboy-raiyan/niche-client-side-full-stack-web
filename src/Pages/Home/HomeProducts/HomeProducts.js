@@ -18,7 +18,7 @@ TopBarProgress.config({
 
 const HomeProducts = () => {
   const { products, isProductLoading } = useProductContext();
-  console.log(products);
+
   return (
     <Wrapper className="creative-services" id="creative-services">
       <Container>

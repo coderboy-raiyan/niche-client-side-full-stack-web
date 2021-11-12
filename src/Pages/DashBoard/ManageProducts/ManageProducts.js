@@ -31,7 +31,6 @@ const ManageProducts = () => {
           .then((res) => res.json())
           .then((data) => {
             if (data) {
-              console.log(data);
               Swal.fire(
                 "Deleted!",
                 "Your Product has been deleted.",

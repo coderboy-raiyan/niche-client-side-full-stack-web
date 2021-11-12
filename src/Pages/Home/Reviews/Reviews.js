@@ -13,7 +13,6 @@ SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 const Reviews = () => {
   const { reviews } = useReviewsContext();
-  console.log(reviews);
 
   return (
     <section className="reviews-section" id="reviews-section">

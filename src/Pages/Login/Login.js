@@ -35,7 +35,6 @@ const Login = () => {
   };
 
   const onSubmit = (data) => {
-    console.log(data);
     if (data.password.length < 6) {
       setError("Password must be at least 6 characters!");
       return Swal.fire({

@@ -11,7 +11,6 @@ const Review = () => {
   const { setIsReviewChanged } = useReviewsContext();
 
   const onSubmit = (data) => {
-    console.log(data);
     const newData = { ...data };
     newData.email = user.email;
     newData.img = user.photoURL;
@@ -41,7 +40,7 @@ const Review = () => {
     reset();
   };
   return (
-    <section className="review-section">
+    <section className="review-section my-5">
       <Container>
         <Row className="d-flex justify-content-center align-items-center vh-100">
           <Col xs={12} lg={6} md={6}>
