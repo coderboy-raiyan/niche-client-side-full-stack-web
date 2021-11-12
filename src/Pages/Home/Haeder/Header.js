@@ -28,7 +28,12 @@ const Header = () => {
   };
 
   return (
-    <Navbar bg="light" expand="lg" className="shadow-sm border-bottom">
+    <Navbar
+      bg="light"
+      expand="lg"
+      className="shadow-sm border-bottom sticky-top"
+      stik
+    >
       <Container fluid>
         <Link to="/" className="navbar-brand">
           <img

@@ -21,3 +21,9 @@ button {
   -ms-border-radius: 30px;
   -o-border-radius: 30px;
 }
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}

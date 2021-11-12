@@ -6,6 +6,7 @@ import AuthProvider from "./Pages/Context/AuthProvider";
 import ProductProvider from "./Pages/Context/ProductProvider";
 import ReviewsProvider from "./Pages/Context/ReviewsProvider";
 import DashBoard from "./Pages/DashBoard/DashBoard/DashBoard";
+import Footer from "./Pages/Home/Footer/Footer";
 import Home from "./Pages/Home/Home/Home";
 import Login from "./Pages/Login/Login";
 import NotFound from "./Pages/NotFound/NotFound";
@@ -46,6 +47,7 @@ const App = () => {
                 <NotFound></NotFound>
               </Route>
             </Switch>
+            <Footer />
           </BrowserRouter>
         </ProductProvider>
       </ReviewsProvider>

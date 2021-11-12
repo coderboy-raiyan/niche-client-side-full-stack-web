@@ -51,7 +51,11 @@ const DashBoard = () => {
 
   return (
     <>
-      <Navbar bg="light" variant="light" className="border-bottom shadow-sm">
+      <Navbar
+        bg="light"
+        variant="light"
+        className="border-bottom shadow-sm sticky-top"
+      >
         <Container>
           <Link className="navbar-brand" to="/dashboard">
             Dash Board

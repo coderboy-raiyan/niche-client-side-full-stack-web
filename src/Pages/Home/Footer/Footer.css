@@ -1,0 +1,79 @@
+.footer {
+  /* padding-top: 100px; */
+}
+.updates-inner {
+  background: #00c874;
+  padding: 70px 0;
+  height: 100%;
+  min-height: 200px;
+}
+.follow-des {
+  width: 60%;
+  margin: auto;
+}
+
+.update-input {
+  width: 90%;
+  margin: auto;
+}
+
+.update-input {
+  padding: 16px;
+}
+
+.footer-inner {
+  height: 100%;
+  min-height: 500px;
+  padding: 60px 0;
+  background: #212121;
+}
+
+.footer ul {
+  padding-left: 0;
+}
+
+.connect-us h3 {
+  font-size: 22px;
+  margin-top: 20px;
+}
+.connect-us h5 {
+  font-size: 15px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ddd;
+  width: 35%;
+  padding-bottom: 10px;
+  color: #fff;
+}
+.connect-us ul li {
+  margin-bottom: 24px;
+  font-size: 15px;
+  color: #fff;
+}
+.connect-us ul li a {
+  color: #fff;
+  font-weight: 600;
+}
+.social-media {
+  display: flex;
+  flex-direction: column;
+}
+.social-media-icons {
+  margin-top: 10px;
+}
+.social-media-icons a {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.follow-media-icons a {
+  color: #00c874;
+  background: #fff;
+  padding: 8px 11px;
+  margin-right: 10px;
+  font-size: 18px;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+}
