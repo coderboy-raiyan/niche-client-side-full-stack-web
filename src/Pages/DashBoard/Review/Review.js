@@ -13,6 +13,7 @@ const Review = () => {
   const onSubmit = (data) => {
     const newData = { ...data };
     newData.email = user.email;
+    newData.name = user.displayName;
     newData.img = user.photoURL;
 
     fetch("http://localhost:5000/user/reviews", {
@@ -57,6 +58,7 @@ const Review = () => {
                     <FormControl
                       placeholder="Name"
                       required
+                      defaultValue={user?.displayName}
                       {...register("name")}
                       type="text"
                       className="p-3 shadow border-2"

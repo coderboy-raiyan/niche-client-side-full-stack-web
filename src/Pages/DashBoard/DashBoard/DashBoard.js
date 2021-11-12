@@ -141,7 +141,7 @@ const DashBoard = () => {
                         className="text-decoration-none text-secondary"
                         to={`${url}/manageproducts`}
                       >
-                        Manage all Products
+                        Manage Products
                       </Link>
                     </ListGroup.Item>
                     <ListGroup.Item
@@ -152,7 +152,7 @@ const DashBoard = () => {
                         className="text-decoration-none text-secondary"
                         to={`${url}/manageorders`}
                       >
-                        Manage Orders
+                        Manage All Orders
                       </Link>
                     </ListGroup.Item>
                   </>

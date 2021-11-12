@@ -83,3 +83,14 @@
 .swiper-button-next {
   display: none;
 }
+
+@media only screen and (max-width: 768px) {
+  .testimonial-inner p {
+    font-size: 17px;
+    line-height: 36px;
+    margin-bottom: 30px;
+    margin-top: 50px;
+    width: 100%;
+    margin: auto;
+  }
+}
