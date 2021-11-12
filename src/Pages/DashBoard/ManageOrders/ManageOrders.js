@@ -19,7 +19,7 @@ const ManageOrders = () => {
 
   // load all orders
   useEffect(() => {
-    fetch("http://localhost:5000/orders")
+    fetch("https://arcane-dusk-87765.herokuapp.com/orders")
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);
@@ -38,7 +38,7 @@ const ManageOrders = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/order/${id}`, {
+        fetch(`https://arcane-dusk-87765.herokuapp.com/order/${id}`, {
           method: "DELETE",
           headers: { "content-type": "application/json" },
         })
@@ -69,7 +69,7 @@ const ManageOrders = () => {
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/order/${id}`, {
+        fetch(`https://arcane-dusk-87765.herokuapp.com/order/${id}`, {
           method: "PUT",
           headers: { "content-type": "application/json" },
         })

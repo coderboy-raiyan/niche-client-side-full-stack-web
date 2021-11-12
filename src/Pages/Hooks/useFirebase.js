@@ -148,7 +148,7 @@ const useFirebase = () => {
 
   // send user information in mongodb
   const sendUser = (userData, method) => {
-    fetch("http://localhost:5000/user", {
+    fetch("https://arcane-dusk-87765.herokuapp.com/user", {
       method: method,
       headers: { "content-type": "application/json" },
       body: JSON.stringify(userData),
@@ -160,7 +160,7 @@ const useFirebase = () => {
   // check if user is admin user
   useEffect(() => {
     setIsAdminLoading(true);
-    fetch(`http://localhost:5000/users/${user.email}`)
+    fetch(`https://arcane-dusk-87765.herokuapp.com/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data))
       .finally(() => {

@@ -5,7 +5,7 @@ const useReviews = () => {
   const [isReviewChanged, setIsReviewChanged] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/user/reviews")
+    fetch("https://arcane-dusk-87765.herokuapp.com/user/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, [isReviewChanged]);

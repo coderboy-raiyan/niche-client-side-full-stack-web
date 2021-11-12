@@ -13,7 +13,7 @@ const useProducts = () => {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/cars")
+    fetch("https://arcane-dusk-87765.herokuapp.com/cars")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [isProductChange]);

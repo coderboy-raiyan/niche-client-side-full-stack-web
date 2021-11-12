@@ -20,7 +20,7 @@ const MyOrders = () => {
 
   // get all the orders
   useEffect(() => {
-    fetch(`http://localhost:5000/orders/${user.email}`)
+    fetch(`https://arcane-dusk-87765.herokuapp.com/orders/${user.email}`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [isDeleted]);
@@ -47,7 +47,7 @@ const MyOrders = () => {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:5000/order/${id}`, {
+          fetch(`https://arcane-dusk-87765.herokuapp.com/order/${id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())

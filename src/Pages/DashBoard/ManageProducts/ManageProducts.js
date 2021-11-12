@@ -24,7 +24,7 @@ const ManageProducts = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/product/${id}`, {
+        fetch(`https://arcane-dusk-87765.herokuapp.com/product/${id}`, {
           method: "DELETE",
           headers: { "Content-Type": "application/json" },
         })

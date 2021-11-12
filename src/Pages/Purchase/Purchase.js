@@ -31,7 +31,7 @@ const Purchase = () => {
     newData.status = "pending";
     newData.img = car.img;
 
-    fetch("http://localhost:5000/cars/order", {
+    fetch("https://arcane-dusk-87765.herokuapp.com/cars/order", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(newData),
@@ -59,7 +59,7 @@ const Purchase = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/cars/${productId}`)
+    fetch(`https://arcane-dusk-87765.herokuapp.com/cars/${productId}`)
       .then((res) => res.json())
       .then((data) => {
         setCar(data);

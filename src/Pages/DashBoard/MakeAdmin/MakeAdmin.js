@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 const MakeAdmin = () => {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/user/admin", {
+    fetch("https://arcane-dusk-87765.herokuapp.com/user/admin", {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
@@ -18,7 +18,7 @@ const MakeAdmin = () => {
           Swal.fire({
             position: "center",
             icon: "success",
-            title: "Wow Now you are a admin",
+            title: "Wow Now this user is admin",
             showConfirmButton: false,
             timer: 1500,
           });
