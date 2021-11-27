@@ -4,13 +4,13 @@ It is a single page application made with ReactJS, React-Bootstrap, MongoDB Atla
 
 # 👉 **Five bullet points**
 
-### ✅ This a website for Cars sell.
+### ✅	Built with beautiful features for users.
 
-### ✅ You can find some of the best cars in the world here.
+### ✅ User can buy cars and give us their valuable reviews.
 
-### ✅ We never compromise with our cars.
+### ✅ All the functionalities are dynamic using back-end and user can find some of the best cars in the world.
 
-### ✅ Also we have a fast delivery system..
+### ✅ Also there is a dashboard for admin who can control all the management system of the website.
 
 ### ✅ And you can also find here the most sells cars in the world.
 
