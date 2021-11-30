@@ -38,7 +38,7 @@ const Header = () => {
       <Container fluid>
         <Link to="/" className="navbar-brand">
           <img
-            src="https://i.ibb.co/S7wpkHw/cars-logo.png"
+            src="https://i.postimg.cc/qvX3nsL7/cars-logo.png"
             alt=""
             width="100px"
           />

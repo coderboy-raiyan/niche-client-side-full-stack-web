@@ -10,7 +10,10 @@ const Helping = () => {
         <Row className="align-items-start">
           <Col xs={12} lg={6} md={6}>
             <div className="help-img">
-              <img src="https://i.ibb.co/C1ZPkQ6/introduction-2.png" alt="" />
+              <img
+                src="https://i.postimg.cc/Y9VGkbpd/introduction-2.png"
+                alt=""
+              />
             </div>
           </Col>
           <Col xs={12} lg={6} md={6}>
