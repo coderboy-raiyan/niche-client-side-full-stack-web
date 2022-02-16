@@ -18,6 +18,12 @@ It is a single page application made with ReactJS, React-Bootstrap, MongoDB Atla
 
 - [Live Site Link](https://niche-web-a35d2.web.app/)
 
+## For admin access use this email and password :
+
+Email: admin@admin.com
+Password: 123456
+
+
 ## Technologies
 
 [![React Badge](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://github.com/coderboy-raiyan)
